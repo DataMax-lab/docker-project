@@ -30,7 +30,7 @@ WORKDIR /app
 COPY main.py .
 
 # Expose the necessary port (if running a Spark cluster)
-EXPOSE 4040
+#EXPOSE 4040
 
 # Command to run the application
-CMD ["python", "main.py"]
+CMD ["python3", "main.py"]
