@@ -21,8 +21,8 @@ ENV PYSPARK_PYTHON=python3
 
 # Install Python dependencies (PySpark, etc.)
 RUN pip install --no-cache-dir \
-    pyspark==${PYSPARK_VERSION} \
-    pandas
+    pyspark==${PYSPARK_VERSION}
+
 # Set working directory
 WORKDIR /app
 
