@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Spark (version 3.3.0)
-ENV SPARK_VERSION=3.3.0
-ENV HADOOP_VERSION=3.2
+ENV SPARK_VERSION=3.4.3
+ENV HADOOP_VERSION=3
 
 RUN curl -sL "https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" | tar -xz -C /opt && \
     mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark
