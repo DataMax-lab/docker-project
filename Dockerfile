@@ -18,6 +18,7 @@ ENV SPARK_HOME=/opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
 ENV PATH=$SPARK_HOME/bin:$PATH
 ENV PYSPARK_PYTHON=python3
 
+USER root
 # Install Python dependencies
 RUN apt-get update && apt-get install -y python3 python3-pip
 COPY requirements.txt .
