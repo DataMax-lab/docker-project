@@ -27,7 +27,7 @@ RUN pip install --no-cache-dir \
 WORKDIR /app
 
 # Copy your project files into the container
-COPY app.py .
+COPY main.py .
 
 # Expose the necessary port (if running a Spark cluster)
 EXPOSE 4040
