@@ -23,7 +23,7 @@ USER root
 RUN apt-get update && apt-get install -y python3 python3-pip
 COPY requirements.txt .
 RUN pip3 install pypandoc
-RUN pip install pyspark
+RUN pip install pyspark==3.4.3
 # Set working directory
 WORKDIR /app
 
