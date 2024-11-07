@@ -1,9 +1,9 @@
 FROM openjdk:8-jdk-slim
 
 # Set environment variables
-ENV PYSPARK_VERSION=3.3.1
-ENV SPARK_VERSION=3.3.1
-ENV HADOOP_VERSION=3.2
+ENV PYSPARK_VERSION=3.4.3
+ENV SPARK_VERSION=3.4.3
+ENV HADOOP_VERSION=3
 
 # Install dependencies (Java, Spark, and other required libraries)
 RUN apt-get update && \
@@ -17,7 +17,6 @@ RUN curl -sL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-
 # Set environment variables for Spark and Hadoop
 ENV SPARK_HOME=/opt/spark
 ENV PATH=$SPARK_HOME/bin:$PATH
-ENV PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 ENV PYSPARK_PYTHON=python3
 
 # Install Python dependencies (PySpark, etc.)
