@@ -11,10 +11,8 @@ RUN apt-get update && apt-get install -y \
 ENV SPARK_VERSION=3.3.0
 ENV HADOOP_VERSION=3.2
 
-RUN curl -o /tmp/spark.tar.gz \
-    "https://apache.mirrors.hoobly.com/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
-    && tar -xvzf /tmp/spark.tar.gz -C /opt \
-    && rm /tmp/spark.tar.gz
+RUN curl -sL "https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" | tar -xz -C /opt && \
+    mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark
 
 # Set Spark environment variables
 ENV SPARK_HOME=/opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
