@@ -7,7 +7,7 @@ ENV HADOOP_VERSION=3.2
 
 # Install dependencies (Java, Spark, and other required libraries)
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
+    apt-get install -y python3 python3-pip curl bash && \
     apt-get clean
 
 # Download and install Apache Spark
