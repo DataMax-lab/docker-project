@@ -30,7 +30,7 @@ RUN pip3 install -r requirements.txt
 WORKDIR /app
 
 # Copy the PySpark app to the container
-COPY app.py .
+COPY main.py .
 
 # Command to run the PySpark app
 CMD ["python3", "app.py"]
