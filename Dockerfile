@@ -7,7 +7,8 @@ ENV SPARK_VERSION=3.3.1
 ENV HADOOP_VERSION=3.2
 
 # Install dependencies (Java, Spark, and other required libraries)
-RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y \
+    openjdk-8-jdk
 RUN apt-get update \
     && apt-get install -y \
     curl \
