@@ -31,4 +31,4 @@ WORKDIR /app
 COPY main.py .
 
 # Command to run the PySpark app
-CMD ["python3", "app.py"]
+CMD ["python3", "main.py"]
