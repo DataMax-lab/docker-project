@@ -1,6 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql import functions as f
-def main():
+def process_emp_data():
     spark = SparkSession.builder \
         .appName("PySpark Docker Example") \
         .getOrCreate()
@@ -10,10 +9,9 @@ def main():
     df = spark.createDataFrame(data, columns)
     print(spark.version)
 
-    df = df.withColumn("sal_with_bonus",f.col("sal")+f.lit(20))
     df.show()
 
     spark.stop()
 
 if __name__ == "__main__":
-    main()
+    process_emp_data()
