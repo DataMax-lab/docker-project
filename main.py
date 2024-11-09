@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql import functions as f
 def process_emp_data():
     spark = SparkSession.builder \
         .appName("PySpark Docker Example") \
@@ -26,6 +27,8 @@ def process_emp_data():
         """
 
     df = spark.sql(sql)
+
+    df = df.withColumn("sal_with_bonus",f.col('sal')+f.lit(30))
 
     df.show()
 
